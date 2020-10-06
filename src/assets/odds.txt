@@ -1,7 +1,7 @@
 Rolling odds:
 
     1   2   3   4   5
-1: 100% -   -   -   -
+1: 100% -   -   -   - 
 2: 100% -   -   -   -
 3: 75% 25%  -   -   -
 4: 55% 30% 15%  -   -
@@ -10,3 +10,10 @@ Rolling odds:
 7: 19% 35% 30% 15%  1%
 8: 14% 20% 35% 25%  6%
 9: 10% 15% 30% 30% 15%
+
+1cost = 29 units
+2cost = 22 units
+3cost = 18 units 
+4cost = 12 units 
+5cost = 10 units
+                 of each champions
