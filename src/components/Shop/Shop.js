@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { oddsCost, initialPool } from "./utils";
-
-const images = require.context("../../assets/cards", true);
+import ChampionSlot from "./ChampionSlot";
 
 const Wrap = styled.div`
 	position: absolute;
@@ -13,18 +12,6 @@ const Wrap = styled.div`
 	color: white;
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
-`;
-
-const Temp = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border: 1px solid #131e1f;
-	background-image: ${(props) => `url(${props.img})`};
-	background-size: contain;
-	background-repeat: no-repeat;
-	width: 100%;
-	height: 100%;
 `;
 
 const Shop = () => {
@@ -48,10 +35,11 @@ const Shop = () => {
 			5: oddsCost(level, pool, setPool),
 		});
 	};
-
+	console.log(pool);
 	return (
 		<Wrap>
 			<div>
+				{/*split this*/}
 				<select onChange={(e) => setLevel(e.target.value)}>
 					<option value="4">Lvl.4</option>
 					<option value="5">Lvl.5</option>
@@ -63,11 +51,14 @@ const Shop = () => {
 				<br />
 				<button onClick={() => reroll()}>Roll</button>
 			</div>
-			<Temp img={images(`./${shopStore[1]}.webp`)}>{shopStore[1]}</Temp>
-			<Temp img={images(`./${shopStore[2]}.webp`)}>{shopStore[2]}</Temp>
-			<Temp img={images(`./${shopStore[3]}.webp`)}>{shopStore[3]}</Temp>
-			<Temp img={images(`./${shopStore[4]}.webp`)}>{shopStore[4]}</Temp>
-			<Temp img={images(`./${shopStore[5]}.webp`)}>{shopStore[5]}</Temp>
+			{Object.values(shopStore).map((slot, index) => (
+				<ChampionSlot
+					key={"slot" + index}
+					slot={slot}
+					pool={pool}
+					setPool={setPool}
+				/>
+			))}
 		</Wrap>
 	);
 };

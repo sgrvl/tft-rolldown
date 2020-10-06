@@ -13,6 +13,8 @@ const GStyles = css`
 		width: 100%;
 		max-width: 100vw;
 		overflow: hidden;
+		background: #0e151a;
+		color: white;
 	}
 `;
 

@@ -48,9 +48,6 @@ const LEVELS = {
 export const oddsChampion = (cost, pool) => {
 	const arr = Object.keys(pool[cost]);
 	const champ = arr[Math.floor(Math.random() * arr.length)];
-	/* const newObject = pool[cost];
-	newObject[champ] = newObject[champ] - 1;
-	setPool({ [cost]: newObject }); */
 	return champ;
 };
 
